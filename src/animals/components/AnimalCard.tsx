@@ -65,8 +65,8 @@ export function AnimalCard({ animal }: AnimalCardProps) {
                                     value={editedGender}
                                     onChange={(e) => setEditedGender(e.target.value)}
                                 >
-                                    <option value="Male">Macho</option>
-                                    <option value="Female">Hembra</option>
+                                    <option value="male">Macho</option>
+                                    <option value="female">Hembra</option>
                                 </select>
                                 <input
                                     type="date"
