@@ -38,7 +38,7 @@ export function AddCategoryDialog() {
                         id="name"
                         type="text"
                         autoComplete='off'
-                        placeholder="Javier Lopez"
+                        placeholder="Vacunas"
                         className="focus:outline-none border-1 border-neutral-300 px-3 py-2 rounded-sm"
                         value={newCategory.name || ""}
                         onChange={(e) => setNewCategory({ name: e.target.value })}

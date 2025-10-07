@@ -23,7 +23,7 @@ export function AddProductDialog() {
 
     const handleSave = async () => {
         if (!newProduct.name?.trim() || !newProduct.quantity || newProduct.quantity <= 0 ||
-            !newProduct.categoryId || !newProduct.expirationDate) {
+            !newProduct.categoryId) {
             setValidationError("Completa todos los campos");
             return;
         }
@@ -38,12 +38,12 @@ export function AddProductDialog() {
             <DialogTitle className='font-mulish'>Registrar producto</DialogTitle>
             <DialogContent className='font-mulish flex flex-col gap-5'>
                 <div className="flex flex-col gap-2">
-                    <label htmlFor="name">Nombre</label>
+                    <label htmlFor="name">Nombre de producto</label>
                     <input
                         id="name"
                         type="text"
                         autoComplete='off'
-                        placeholder="Javier Lopez"
+                        placeholder="Trigo"
                         className="focus:outline-none border-1 border-neutral-300 px-3 py-2 rounded-sm"
                         value={newProduct.name || ""}
                         onChange={(e) => setNewProduct({ name: e.target.value })}
@@ -95,7 +95,7 @@ export function AddProductDialog() {
 
                     <DatePicker
                         className='mt-5'
-                        label="Fecha de inicio"
+                        label="Fecha de vencimiento (opcional)"
                         value={newProduct.expirationDate ? dayjs(newProduct.expirationDate) : null}
                         onChange={(date) => {
                             if (date) {
